@@ -30,7 +30,7 @@ Passionate about building efficient and scalable web applications, I specialize 
 
 ## 📊 GitHub Stats:
 
-<div>
+<div style="text-align: center">
   <img src="https://github-readme-stats.vercel.app/api/top-langs?username=aykhanalizada&locale=en&layout=compact&card_width=320&langs_count=5&theme=dracula" height="150" alt="Top Languages" />
 </div>
 
