@@ -9,8 +9,9 @@ a Web Developer from Azerbaijan 🇦🇿
 
 <hr>
 
-Passionate about building efficient and scalable web applications, I specialize in **Laravel, Vue.js, and modern web
-technologies**. I love coding, problem-solving, and continuously improving my skills!
+I’m passionate about building efficient and scalable web applications! 💻 I specialize in Laravel, Vue.js, and modern web
+technologies, always striving to write clean and optimized code. 😎 I love coding, solving complex problems, and
+constantly improving my skills! 🚀
 
 ---
 
