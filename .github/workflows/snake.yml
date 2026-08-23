@@ -31,7 +31,14 @@ jobs:
             dist/ocean.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      # Step 3: Deploy the generated files to the 'output' branch
+      # Step 3: Slow down the snake animation (snk doesn't expose a speed option,
+      # so scale the generated CSS animation duration directly)
+      - name: Slow down snake animation
+        run: |
+          for f in dist/*.svg; do
+            perl -pi -e 's/(\d+)ms/int($1*2.5)."ms"/ge' "$f"
+          done
+      # Step 4: Deploy the generated files to the 'output' branch
       - name: Deploy to Output Branch
         uses: peaceiris/actions-gh-pages@v3
         with:
