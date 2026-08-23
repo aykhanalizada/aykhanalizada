@@ -35,8 +35,10 @@ jobs:
       # so scale the generated CSS animation duration directly)
       - name: Slow down snake animation
         run: |
+          # snk's docker action writes dist/ as root, so a plain in-place edit
+          # (perl -i) fails silently trying to create its temp file there.
           for f in dist/*.svg; do
-            perl -pi -e 's/(\d+)ms/int($1*6)."ms"/ge' "$f"
+            sudo perl -pe 's/(\d+)ms/int($1*6)."ms"/ge' "$f" | sudo tee "$f" > /dev/null
           done
       # Step 4: Deploy the generated files to the 'output' branch
       - name: Deploy to Output Branch
