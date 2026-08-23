@@ -36,7 +36,7 @@ jobs:
       - name: Slow down snake animation
         run: |
           for f in dist/*.svg; do
-            perl -pi -e 's/(\d+)ms/int($1*2.5)."ms"/ge' "$f"
+            perl -pi -e 's/(\d+)ms/int($1*6)."ms"/ge' "$f"
           done
       # Step 4: Deploy the generated files to the 'output' branch
       - name: Deploy to Output Branch
