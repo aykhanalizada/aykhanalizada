@@ -38,7 +38,8 @@ jobs:
           # snk's docker action writes dist/ as root, so a plain in-place edit
           # (perl -i) fails silently trying to create its temp file there.
           for f in dist/*.svg; do
-            sudo perl -pe 's/(\d+)ms/int($1*6)."ms"/ge' "$f" | sudo tee "$f" > /dev/null
+            content=$(sudo perl -pe 's/(\d+)ms/int($1*6)."ms"/ge' "$f")
+            echo "$content" | sudo tee "$f" > /dev/null
           done
       # Step 4: Deploy the generated files to the 'output' branch
       - name: Deploy to Output Branch
